@@ -3,8 +3,6 @@ package consul
 import (
 	"testing"
 
-	"fmt"
-
 	"github.com/mojo-zd/go-library/debug"
 	"github.com/mojo-zd/wise2c-components/consul"
 )
@@ -23,8 +21,4 @@ func Test_Consul(t *testing.T) {
 
 		}
 	}
-}
-
-func Test_Println(t *testing.T) {
-	fmt.Printf("==== %s", "mojo")
 }
