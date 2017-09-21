@@ -16,10 +16,9 @@ var (
 
 func GetRegistryIp() (ip string) {
 	ip = internalIp()
-
-	//if len(os.Getenv("KUBERNETES_PORT")) == 0 {
-	//	ip = getRancherManageIP()
-	//}
+	if len(os.Getenv("KUBERNETES_PORT")) == 0 {
+		ip = getRancherManageIP()
+	}
 	return
 }
 

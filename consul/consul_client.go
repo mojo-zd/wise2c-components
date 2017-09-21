@@ -101,7 +101,7 @@ func (client *ConsulClient) newAgentServiceRegistration() (agentService *api.Age
 		Port:              client.RegistryPort,
 		Check: &api.AgentServiceCheck{
 			DeregisterCriticalServiceAfter: client.DeRegisterCriticalServiceAfter,
-			HTTP:     client.HealthCheckURL,
+			HTTP:     fmt.Sprintf("http://%s:%d/%s", client.RegistryIp, client.RegistryPort, client.HealthCheckURL),
 			Interval: client.Interval,
 			Timeout:  client.TTL,
 		},
